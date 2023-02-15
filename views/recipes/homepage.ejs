@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<div class="banner-txt">
+    <h1 class="banner-text" style="font-size: 6vw;">Cook Up</h1>
+    <h5 class="banner-text" style="font-size: 2vw;">Search a recipe name or ingredient to start!</h5>
+</div>
+    <!-- <div class="banner-img"></div> -->
+    <div class="recipe-row">
+        <% for(var i=0; i < 0; i++) { %>
+            <% if(i % 3==0 && i !=0) { %>
+    </div>
+    <div class="recipe-row">
+        <% } %>
+            <div class="recipe-container">
+                <div class="recipe-card">
+                    <img src="<%= recipeData.recipes[i].image %>">
+                    <div class="recipe-info">
+                        <h3>
+                            <%= recipeData.recipes[i].title %>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+    </div>
+
+    <%- include('../partials/footer') %>

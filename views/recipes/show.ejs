@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+    <div class="recipe">
+
+        <h1 class="recipe-title">
+            <%= recipeData.title%>
+        </h1>
+        <div class="recipe-image">
+            <img src="<%= recipeData.image%>" alt="Recipe Image">
+        </div>
+        <div class="recipe-details">
+            <ul>
+                <li>Total Time: <%= recipeData.readyInMinutes%>
+                </li>
+                <li>Servings: <%= recipeData.servings%>
+            </ul>
+        </div>
+        <div class="recipe-ingredients">
+            <h2>Ingredients:</h2>
+            <ul>
+                <% recipeData.extendedIngredients.forEach(function(i) { %>
+                    <li>
+                        <%= i.original %>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div class="recipe-instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <%steps.forEach(function(s) {%>
+                    <li>
+                        <%=s%>
+                    </li>
+                    <% });%>
+            </ol>
+        </div>
+        <a href="/recipes/<%= recipeData.id%>/reviews/new" class="newReview">Add Review</a>
+        <h2>Reviews</h2>
+        
+
+
+    </div>
+    <%- include('../partials/footer') %>
